@@ -1,0 +1,1033 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Google Analytics: Measurement ID is read from .env by analytics.php -->
+    <script>
+      // Load analytics only on a real web server (not file:// and not localhost)
+      (function () {
+        var l = location;
+        if ((l.protocol === "http:" || l.protocol === "https:") && l.hostname !== "localhost" && l.hostname !== "127.0.0.1") {
+          var s = document.createElement("script");
+          s.async = true;
+          s.src = "analytics.php";
+          document.head.appendChild(s);
+        }
+      })();
+    </script>
+    <meta charset="UTF-8" />
+    <script>
+      (function () {
+        try {
+          var p = localStorage.getItem("theme") || "dark";
+          var d = p === "dark" || (p === "system" && matchMedia("(prefers-color-scheme: dark)").matches);
+          document.documentElement.setAttribute("data-theme", d ? "dark" : "light");
+        } catch (e) {}
+      })();
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Md Abu Bakar Siddique | Portfolio</title>
+    <meta name="description" content="Portfolio of Md Abu Bakar Siddique, Software Engineer (QA): software testing, bug reporting, smoke testing and quality assurance, plus projects, robotics and volunteering." />
+    <meta name="author" content="Md Abu Bakar Siddique" />
+    <meta name="theme-color" content="#4a5568" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Md Abu Bakar Siddique | Portfolio" />
+    <meta property="og:description" content="Software Engineer (QA): projects, skills, robotics competitions and volunteering." />
+    <meta name="twitter:card" content="summary" />
+    <link rel="icon" type="image/png" href="assets/abs.png" />
+
+    <link rel="stylesheet" href="styles.css?v=20261110" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar">
+      <div class="nav-container">
+        <a href="index.html" class="nav-logo">
+          <img src="assets/abs.png" alt="abs logo" />
+        </a>
+        <ul class="nav-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#education">Education</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#activities">Activities</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li class="nav-theme"><button type="button" class="theme-switch" role="switch" aria-checked="false" aria-label="Dark mode">
+          <span class="knob" aria-hidden="true">
+            <svg class="i-sun" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+            <svg class="i-moon" viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+          </span>
+        </button>
+          </li>
+        </ul>
+        <button type="button" class="theme-switch nav-switch-desktop" role="switch" aria-checked="false" aria-label="Dark mode">
+          <span class="knob" aria-hidden="true">
+            <svg class="i-sun" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+            <svg class="i-moon" viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+          </span>
+        </button>
+        <a href="#contact" class="btn btn-primary nav-cta">Hire Me</a>
+        <div class="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+      <div class="scroll-progress" aria-hidden="true"><span id="scrollProgress"></span></div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+      <div class="container">
+        <div class="hero-grid">
+          <div class="hero-content">
+            <!--<div class="hero-badge">
+              <span class="badge-dot"></span>
+              <span class="mono">status --available-for-hire</span>
+            </div>-->
+            <p class="hero-eyebrow">Hi, I am</p>
+            <h1 class="hero-title">MD ABU BAKAR<br /><span class="gradient-text">SIDDIQUE</span></h1>
+            <p class="hero-subtitle">Software Engineer, QA</p>
+            <p class="hero-description" style="text-align: justify;">
+              Passionate about ensuring software quality and delivering reliable, user-friendly digital experiences. Currently gaining hands-on experience in software testing, bug reporting, smoke testing, and quality assurance, while continuously developing my skills in manual and automated testing.
+            </p>
+            <div class="hero-actions">
+              <a href="#contact" class="btn btn-primary">
+                <span>Get In Touch</span>
+                <i class="fas fa-arrow-right"></i>
+              </a>
+              <a
+                href="assets/Resume%20of%20Md%20Abu%20Bakar%20Siddique.pdf"
+                class="btn btn-primary"
+                id="viewCVBtn"
+                target="_blank"
+                rel="noopener"
+              >
+                <i class="fa-solid fa-eye"></i>
+                View CV
+              </a>
+            </div>
+            <div class="hero-social">
+              <a href="https://linkedin.com/in/siddique0203" target="_blank" aria-label="LinkedIn">
+                <i class="fab fa-linkedin"></i>
+              </a>
+              <a href="mailto:siddique0203@gmail.com" aria-label="Email">
+                <i class="fas fa-envelope"></i>
+              </a>
+              <a href="https://github.com/siddique0203" target="_blank" aria-label="GitHub">
+                <i class="fab fa-github"></i>
+              </a>
+              <a href="https://wa.me/8801756736045" target="_blank" aria-label="WhatsApp">
+                <i class="fab fa-whatsapp"></i>
+              </a>
+              <a href="https://www.facebook.com/mdabubakar.siddique.1614" target="_blank" aria-label="Facebook">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+            </div>
+
+           
+          </div>
+          <div class="hero-visual">
+            <div class="profile-card">
+                <div class="profile-image">
+                    <img src="assets/hero-photo-final.jpg" alt="MD Abu Bakar Siddique" />
+                    <div class="profile-ring"></div>
+                    <div class="profile-ring-2"></div>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Get to know me</span>
+          <h2 class="section-title">About Me</h2>
+        </div>
+        <div class="about-content">
+          <div class="about-image">
+            <img src="assets/about-photo.jpg" alt="MD Abu Bakar Siddique portrait" />
+            <div class="about-ring"></div>
+          </div>
+          <div class="about-text" style="text-align: justify;">
+            <p>
+              I am a Computer Science & Engineering graduate from AIUB and currently working as a Support & QA Intern at EWN Bangladesh Ltd. I am passionate about software quality assurance, problem-solving, and building reliable, user-focused software solutions.
+            </p>
+            <p>
+              I have hands-on experience in manual testing, test case design, bug reporting, smoke testing, API testing, and basic test automation. I am familiar with the Software Development Life Cycle (SDLC) and Software Testing Life Cycle (STLC), including requirements analysis, test planning, test execution, defect reporting, retesting, and regression testing.
+            </p>
+            <p>
+              My technical background includes C#, Java, Python, JavaScript, PHP, SQL, ASP.NET Core, HTML, and CSS. I also have experience working with tools and technologies such as Selenium WebDriver, Postman, GitHub, Jira, SQL Server, and MySQL.
+            </p>
+            <p>
+              I enjoy analyzing complex problems, identifying issues, and contributing to effective solutions. As a collaborative and detail-oriented individual, I value clear communication, proper documentation, continuous learning, and delivering high-quality software. My goal is to continue growing as a Software Quality Assurance Engineer while expanding my knowledge of software development, testing methodologies, and modern technologies.            </p>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="experience-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Where I've worked</span>
+          <h2 class="section-title">Experience</h2>
+        </div>
+        <div class="experience-timeline">
+          <div class="experience-item">
+            <div class="edu-icon">
+              <i class="fas fa-briefcase"></i>
+            </div>
+            <div class="edu-content">
+              <div class="edu-header">
+                <div>
+                  <h3>Support &amp; QA Intern</h3>
+                  <h4>EWN Bangladesh Ltd</h4>
+                  <p class="duration">Dhaka, Bangladesh</p>
+                </div>
+                <div class="edu-badge">July 2026 - Present</div>
+              </div>
+              
+
+              <!-- Projects Worked On -->
+              <div class="exp-block">
+                <div class="exp-block-title"><i class="fas fa-diagram-project"></i> Projects Worked On</div>
+                <div class="exp-tags">
+                  <span class="exp-tag">SIAVY</span>
+                  <span class="exp-tag">Prochar</span>
+                  <span class="exp-tag">FuelTrackr</span>
+                  <span class="exp-tag">Limo</span>
+                  
+                </div>
+              </div>
+
+              <!-- Skills & Activities Applied -->
+              <div class="exp-block">
+                <div class="exp-block-title"><i class="fas fa-wrench"></i> Skills &amp; Activities Applied</div>
+                <div class="exp-tags">
+                  <span class="exp-tag alt">Manual Testing</span>
+                  <span class="exp-tag alt">Test Case Design</span>
+                  <span class="exp-tag alt">Bug Reporting</span>
+                  <span class="exp-tag alt">Regression Testing</span>
+                  <span class="exp-tag alt">UI/UX Testing</span>
+                  <span class="exp-tag alt">UXCam Session Analysis</span>
+                  <span class="exp-tag alt">Weekly Report Review</span>
+                  <span class="exp-tag alt">QA Testing</span>
+                  <span class="exp-tag alt">Client-Side Bug Reporting</span>
+                  <span class="exp-tag alt">Verification</span>
+                  <span class="exp-tag alt">Functional Testing</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills / Services Section -->
+    <section id="skills" class="skills-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">What I bring to the table</span>
+          <h2 class="section-title">Skills &amp; Expertise</h2>
+        </div>
+        <div class="skills-grid">
+          <!-- Testing & QA -->
+          <div class="skill-category">
+            <div class="skill-icon">
+              <i class="fas fa-bug"></i>
+            </div>
+            <h3 class="skill-title">Testing &amp; QA</h3>
+            <div class="skill-items">
+              <span class="skill-tag">Manual Testing</span>
+              <span class="skill-tag">Automation Testing</span>
+              <span class="skill-tag">Test Case Design</span>
+              <span class="skill-tag">Test Planning</span>
+              <span class="skill-tag">API Testing</span>
+              <span class="skill-tag">Postman</span>
+              <span class="skill-tag">Selenium</span>
+              <span class="skill-tag">SaaS Product Testing</span>
+              <span class="skill-tag">SDLC</span>
+              <span class="skill-tag">STLC</span>
+            </div>
+          </div>
+
+          <!-- Software Engineering -->
+          <div class="skill-category">
+            <div class="skill-icon">
+              <i class="fas fa-project-diagram"></i>
+            </div>
+            <h3 class="skill-title">Software Engineering</h3>
+            <div class="skill-items">
+              <span class="skill-tag">OOP</span>
+              <span class="skill-tag">MVC Architecture</span>
+              <span class="skill-tag">SRS Documentation</span>
+              <span class="skill-tag">UML Diagrams</span>
+              <span class="skill-tag">Requirement Analysis</span>
+              <span class="skill-tag">Agile Basics</span>
+            </div>
+          </div>
+
+          <!-- Programming Languages -->
+          <div class="skill-category">
+            <div class="skill-icon">
+              <i class="fas fa-code"></i>
+            </div>
+            <h3 class="skill-title">Programming Languages</h3>
+            <div class="skill-items">
+              <span class="skill-tag">C</span>
+              <span class="skill-tag">C++</span>
+              <span class="skill-tag">C#</span>
+              <span class="skill-tag">Java</span>
+              <span class="skill-tag">Python</span>
+              <span class="skill-tag">PHP</span>
+            </div>
+          </div>
+
+          <!-- Web & Frameworks -->
+          <div class="skill-category">
+            <div class="skill-icon">
+              <i class="fas fa-laptop-code"></i>
+            </div>
+            <h3 class="skill-title">Web &amp; Frameworks</h3>
+            <div class="skill-items">
+              <span class="skill-tag">ASP.NET MVC</span>
+              <span class="skill-tag">ASP.NET Core</span>
+              <span class="skill-tag">WordPress</span>
+              <span class="skill-tag">Entity Framework</span>
+              <span class="skill-tag">LINQ</span>
+              <span class="skill-tag">HTML5</span>
+              <span class="skill-tag">CSS3</span>
+              <span class="skill-tag">JavaScript</span>
+              <span class="skill-tag">Bootstrap</span>
+            </div>
+          </div>
+
+          <!-- Database -->
+          <div class="skill-category">
+            <div class="skill-icon">
+              <i class="fas fa-database"></i>
+            </div>
+            <h3 class="skill-title">Database</h3>
+            <div class="skill-items">
+              <span class="skill-tag">SQL</span>
+              <span class="skill-tag">Database Design</span>
+            </div>
+          </div>
+
+          <!-- Tools & Platforms -->
+          <div class="skill-category">
+            <div class="skill-icon">
+              <i class="fas fa-tools"></i>
+            </div>
+            <h3 class="skill-title">Tools &amp; Platforms</h3>
+            <div class="skill-items">
+              <span class="skill-tag">Git</span>
+              <span class="skill-tag">GitHub</span>
+              <span class="skill-tag">Jira</span>
+              <span class="skill-tag">Draw.io</span>
+            </div>
+          </div>
+
+          <!-- Soft Skills -->
+          <div class="skill-category">
+            <div class="skill-icon">
+              <i class="fas fa-user-check"></i>
+            </div>
+            <h3 class="skill-title">Soft Skills</h3>
+            <div class="skill-items">
+              <span class="skill-tag">Problem Solving</span>
+              <span class="skill-tag">Analytical Thinking</span>
+              <span class="skill-tag">Team Collaboration</span>
+              <span class="skill-tag">Communication</span>
+              <span class="skill-tag">Documentation</span>
+              <span class="skill-tag">Time Management</span>
+            </div>
+          </div>
+
+          <!-- Robotics & Embedded Systems -->
+          <div class="skill-category">
+            <div class="skill-icon">
+              <i class="fas fa-microchip"></i>
+            </div>
+            <h3 class="skill-title">Robotics &amp; Embedded Systems</h3>
+            <div class="skill-items">
+              <span class="skill-tag">Circuit Design</span>
+              <span class="skill-tag">Arduino</span>
+              <span class="skill-tag">ESP32</span>
+              <span class="skill-tag">Motor Control</span>
+              <span class="skill-tag">Sensor Integration</span>
+              <span class="skill-tag">Robo Soccer Bot</span>
+              <span class="skill-tag">RC Bot Design</span>
+              <span class="skill-tag">Robot Chassis Design</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="education-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Academic Background</span>
+          <h2 class="section-title">Education</h2>
+        </div>
+        <div class="education-timeline">
+          <div class="education-item">
+            <div class="edu-marker">
+              <div class="edu-icon current">
+                <i class="fas fa-graduation-cap"></i>
+              </div>
+            </div>
+            <div class="edu-card">
+              <div class="edu-header">
+                <div>
+                  <h3>BSc in Computer Science &amp; Engineering</h3>
+                  <h4>American International University-Bangladesh (AIUB)</h4>
+                </div>
+                <div class="edu-badge">2022 - 2026</div>
+              </div>
+              <div class="edu-details">
+                <span class="edu-detail-item">
+                  <i class="fas fa-map-marker-alt"></i> Dhaka, Bangladesh
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <div class="education-item">
+            <div class="edu-marker">
+              <div class="edu-icon">
+                <i class="fas fa-school"></i>
+              </div>
+            </div>
+            <div class="edu-card">
+              <div class="edu-header">
+                <div>
+                  <h3>Higher Secondary Certificate (HSC)</h3>
+                  <h4>Govt. Shahid Smriti College, Mymensingh</h4>
+                </div>
+                <div class="edu-badge">2021</div>
+              </div>
+              <div class="edu-details">
+                <span class="edu-detail-item">
+                  <i class="fas fa-map-marker-alt"></i> Mymensingh, Bangladesh
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <div class="education-item">
+            <div class="edu-marker">
+              <div class="edu-icon">
+                <i class="fas fa-book-open"></i>
+              </div>
+            </div>
+            <div class="edu-card">
+              <div class="edu-header">
+                <div>
+                  <h3>Secondary School Certificate (SSC)</h3>
+                  <h4>Armed Police Battalion Adarsha High School, Mymensingh</h4>
+                </div>
+                <div class="edu-badge">2019</div>
+              </div>
+              <div class="edu-details">
+                <span class="edu-detail-item">
+                  <i class="fas fa-map-marker-alt"></i> Mymensingh, Bangladesh
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">What I've built</span>
+          <h2 class="section-title">Featured Projects</h2>
+        </div>
+
+        <div class="filter-tabs">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="qa">QA &amp; Testing</button>
+          <button class="filter-btn" data-filter="dotnet">.NET / C#</button>
+          <button class="filter-btn" data-filter="web">Web / PHP</button>
+          <button class="filter-btn" data-filter="python">Python</button>
+        </div>
+
+        <div class="projects-grid">
+          <!-- Crafty - Test Plan -->
+          <div class="project-card" data-category="qa">
+            <div class="project-window">
+              <div class="window-dots"><span></span><span></span><span></span></div>
+              <span class="mono window-label">test_plan.md</span>
+            </div>
+            <div class="project-body">
+              <h3>Crafty — Test Plan</h3>
+              <div class="project-tags">
+                <span class="skill-tag">Manual Testing</span>
+                <span class="skill-tag">Jira</span>
+                <span class="skill-tag">Postman</span>
+              </div>
+              <p>
+                A web-based artisan product marketplace project focused on requirement
+                analysis, test planning, and manual execution of test cases for product
+                validation, approval workflow, checkout, and order processing. API testing
+                performed with Postman; defects tracked systematically.
+              </p>
+              <a href="https://github.com/siddique0203/Software-Quality-Testing-SQT-Project" target="_blank" class="project-btn">
+                <i class="fab fa-github"></i> View Project
+              </a>
+            </div>
+          </div>
+
+          <!-- Shifting Service Management System -->
+          <div class="project-card" data-category="dotnet">
+            <div class="project-window">
+              <div class="window-dots"><span></span><span></span><span></span></div>
+              <span class="mono window-label">ShiftingService.sln</span>
+            </div>
+            <div class="project-body">
+              <h3>Shifting Service Management System</h3>
+              <div class="project-tags">
+                <span class="skill-tag">ASP.NET</span>
+                <span class="skill-tag">C#</span>
+                <span class="skill-tag">Entity Framework</span>
+                <span class="skill-tag">SQL Server</span>
+              </div>
+              <p>
+                A web-based service management system built with MVC architecture,
+                including booking, payment processing, reporting, and administrative
+                control modules, with efficient data handling using LINQ and Entity
+                Framework.
+              </p>
+              <a href="https://github.com/siddique0203/DotNet_PROJECT" target="_blank" class="project-btn">
+                <i class="fab fa-github"></i> View Project
+              </a>
+            </div>
+          </div>
+
+          <!-- Crafty SRS -->
+          <div class="project-card" data-category="qa">
+            <div class="project-window">
+              <div class="window-dots"><span></span><span></span><span></span></div>
+              <span class="mono window-label">SRS_Crafty.docx</span>
+            </div>
+            <div class="project-body">
+              <h3>Crafty — Software Requirement Specification</h3>
+              <div class="project-tags">
+                <span class="skill-tag">UML</span>
+                <span class="skill-tag">Draw.io</span>
+                <span class="skill-tag">MS Word</span>
+              </div>
+              <p>
+                A complete SRS document following standard guidelines, covering
+                requirement elicitation, use case modeling, and detailed functional and
+                non-functional specifications.
+              </p>
+              <a href="https://github.com/siddique0203/SRS_of_Crafty" target="_blank" class="project-btn">
+                <i class="fab fa-github"></i> View Document
+              </a>
+            </div>
+          </div>
+
+          <!-- AgriConnect -->
+          <div class="project-card" data-category="web">
+            <div class="project-window">
+              <div class="window-dots"><span></span><span></span><span></span></div>
+              <span class="mono window-label">agriconnect/index.php</span>
+            </div>
+            <div class="project-body">
+              <h3>AgriConnect</h3>
+              <div class="project-tags">
+                <span class="skill-tag">HTML</span>
+                <span class="skill-tag">CSS</span>
+                <span class="skill-tag">JavaScript</span>
+                <span class="skill-tag">PHP</span>
+                <span class="skill-tag">MySQLi</span>
+              </div>
+              <p>
+                A web platform connecting farmers, suppliers, and buyers, with full CRUD
+                functionality backed by a database to manage users, products, and
+                transactions.
+              </p>
+              <a href="https://github.com/siddique0203/AgriConnect" target="_blank" class="project-btn">
+                <i class="fab fa-github"></i> View Project
+              </a>
+            </div>
+          </div>
+
+          <!-- GovtAid -->
+          <div class="project-card" data-category="dotnet">
+            <div class="project-window">
+              <div class="window-dots"><span></span><span></span><span></span></div>
+              <span class="mono window-label">GovtAid.cs</span>
+            </div>
+            <div class="project-body">
+              <h3>GovtAid</h3>
+              <div class="project-tags">
+                <span class="skill-tag">C#</span>
+              </div>
+              <p>
+                A service facilitation platform enabling users to access government
+                services through brokers, featuring authentication, role-based access
+                control, and broker management.
+              </p>
+              <a href="https://github.com/siddique0203/C-Sharp" target="_blank" class="project-btn">
+                <i class="fab fa-github"></i> View Project
+              </a>
+            </div>
+          </div>
+
+          <!-- FixtureFlow -->
+          <div class="project-card" data-category="python">
+            <div class="project-window">
+              <div class="window-dots"><span></span><span></span><span></span></div>
+              <span class="mono window-label">fixtureflow.py</span>
+            </div>
+            <div class="project-body">
+              <h3>FixtureFlow</h3>
+              <div class="project-tags">
+                <span class="skill-tag">Python</span>
+              </div>
+              <p>
+                A Python-based tournament management system used in AIUB GAMES-2024 with
+                over 3,000 participants, automating match calculation, byes, and round
+                scheduling.
+              </p>
+              <a href="https://github.com/siddique0203/FixtureFlow" target="_blank" class="project-btn">
+                <i class="fab fa-github"></i> View Project
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+
+    <!-- Achievements Section -->
+    <section id="activities" class="achievements-section activities-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Beyond the classroom</span>
+          <h2 class="section-title">Extra-Curricular Activities</h2>
+        </div>
+
+        <div class="tabs" role="tablist" aria-label="Activity categories">
+          <button type="button" role="tab" id="tab-volunteering" class="tab" aria-controls="panel-volunteering" aria-selected="true">Volunteering <span class="tab-count">1</span></button>
+          <button type="button" role="tab" id="tab-achievements" class="tab" aria-controls="panel-achievements" aria-selected="false" tabindex="-1">Achievements <span class="tab-count">2</span></button>
+          <button type="button" role="tab" id="tab-robotics" class="tab" aria-controls="panel-robotics" aria-selected="false" tabindex="-1">Robotics Competitions <span class="tab-count">6</span></button>
+        </div>
+
+        <div role="tabpanel" id="panel-volunteering" aria-labelledby="tab-volunteering" class="tab-panel">
+          <div class="slider" data-interval="2500" role="group" aria-roledescription="carousel" aria-label="Volunteering">
+            <div class="vol-layout">
+              <div class="vol-info">
+              <span class="slide-kicker">Dec 2024 – Jul 2025</span>
+              <h3>Office of Sports, AIUB</h3>
+              <p class="slide-sub">In-Charge, Volunteer Unit</p>
+              <ul class="vol-list">
+                <li>Led planning and execution of major inter-college and intra-university tournaments.</li>
+                <li>Supervised volunteers for event logistics and coordination.</li>
+              </ul>
+            </div>
+              <div class="slider-track">
+            <article class="slide vol-slide" role="group" aria-roledescription="slide" aria-label="1 of 2">
+              <div class="achievement-gallery cert-gallery" data-images='["assets/activities/office-of-sports-volunteer-team.webp"]' data-title="Office of Sports volunteer team at AIUB">
+                <button type="button" class="achievement-photo cert-frame" data-index="0" aria-label="View photo larger"><img src="assets/activities/office-of-sports-volunteer-team.webp" alt="Office of Sports volunteer team at AIUB" loading="lazy" /></button>
+              </div>
+              <p class="slide-caption">Volunteer team, Office of Sports, AIUB</p>
+            </article>
+            <article class="slide vol-slide" role="group" aria-roledescription="slide" aria-label="2 of 2">
+              <div class="achievement-gallery cert-gallery" data-images='["assets/activities/inter-college-cricket-2025-prize-giving.webp"]' data-title="AIUB Inter College Cricket Championship 2025 prize-giving ceremony">
+                <button type="button" class="achievement-photo cert-frame" data-index="0" aria-label="View photo larger"><img src="assets/activities/inter-college-cricket-2025-prize-giving.webp" alt="AIUB Inter College Cricket Championship 2025 prize-giving ceremony" loading="lazy" /></button>
+              </div>
+              <p class="slide-caption">AIUB Inter College Cricket Championship 2025, prize-giving ceremony</p>
+            </article>
+              </div>
+            </div>
+            <div class="slider-controls">
+            <button type="button" class="slider-btn slider-prev" aria-label="Previous slide"><i class="fas fa-chevron-left" aria-hidden="true"></i></button>
+            <div class="slider-dots"></div>
+            <span class="slider-count" aria-hidden="true"></span>
+            <button type="button" class="slider-btn slider-next" aria-label="Next slide"><i class="fas fa-chevron-right" aria-hidden="true"></i></button>
+          </div>
+          <div class="slider-progress" aria-hidden="true"></div>
+          </div>
+        </div>
+
+        <div role="tabpanel" id="panel-achievements" aria-labelledby="tab-achievements" class="tab-panel" hidden>
+          <div class="slider" data-interval="2500" role="group" aria-roledescription="carousel" aria-label="Achievements">
+            <div class="slider-track">
+            <article class="slide vol-slide ach-slide" role="group" aria-roledescription="slide" aria-label="1 of 4">
+              <div class="vol-info">
+                <span class="slide-kicker"><i class="fas fa-trophy" aria-hidden="true"></i> Champion</span>
+                <h3>Intra University Poster Presentation Competition</h3>
+                <button type="button" class="btn btn-outline achievement-toggle" data-target="poster-0"><i class="fas fa-images" aria-hidden="true"></i><span>View all photos</span></button>
+              </div>
+              <div class="ach-media">
+                <div class="achievement-gallery cert-gallery" data-achievement="poster-0" data-images='["assets/achievements/poster-1.jpg","assets/achievements/poster-2.jpg","assets/achievements/poster-3.jpg","assets/achievements/poster-4.jpg"]' data-title="Intra University Poster Presentation Competition">
+                  <button type="button" class="achievement-photo cert-frame" data-index="0" aria-label="View photo larger"><img src="assets/achievements/poster-1.jpg" alt="Poster Presentation Competition award and certificate" loading="lazy" /></button>
+                </div>
+                <p class="slide-caption">Award and certificate</p>
+              </div>
+            </article>
+            <article class="slide vol-slide ach-slide" role="group" aria-roledescription="slide" aria-label="2 of 4">
+              <div class="vol-info">
+                <span class="slide-kicker"><i class="fas fa-trophy" aria-hidden="true"></i> Champion</span>
+                <h3>Intra University Poster Presentation Competition</h3>
+                <button type="button" class="btn btn-outline achievement-toggle" data-target="poster-1"><i class="fas fa-images" aria-hidden="true"></i><span>View all photos</span></button>
+              </div>
+              <div class="ach-media">
+                <div class="achievement-gallery cert-gallery" data-achievement="poster-1" data-images='["assets/achievements/poster-1.jpg","assets/achievements/poster-2.jpg","assets/achievements/poster-3.jpg","assets/achievements/poster-4.jpg"]' data-title="Intra University Poster Presentation Competition">
+                  <button type="button" class="achievement-photo cert-frame" data-index="1" aria-label="View photo larger"><img src="assets/achievements/poster-2.jpg" alt="Poster Presentation Competition award ceremony" loading="lazy" /></button>
+                </div>
+                <p class="slide-caption">Award ceremony</p>
+              </div>
+            </article>
+            <article class="slide vol-slide ach-slide" role="group" aria-roledescription="slide" aria-label="3 of 4">
+              <div class="vol-info">
+                <span class="slide-kicker"><i class="fas fa-trophy" aria-hidden="true"></i> Champion</span>
+                <h3>AIUB Intra University Robo Championship</h3>
+                <button type="button" class="btn btn-outline achievement-toggle" data-target="robo-0"><i class="fas fa-images" aria-hidden="true"></i><span>View all photos</span></button>
+              </div>
+              <div class="ach-media">
+                <div class="achievement-gallery cert-gallery" data-achievement="robo-0" data-images='["assets/achievements/robo-1.jpg","assets/achievements/robo-2.jpg","assets/achievements/robo-3.jpg","assets/achievements/robo-4.jpg"]' data-title="AIUB Intra University Robo Championship">
+                  <button type="button" class="achievement-photo cert-frame" data-index="0" aria-label="View photo larger"><img src="assets/achievements/robo-1.jpg" alt="AIUB Robo Championship, holding the trophy" loading="lazy" /></button>
+                </div>
+                <p class="slide-caption">Holding the trophy</p>
+              </div>
+            </article>
+            <article class="slide vol-slide ach-slide" role="group" aria-roledescription="slide" aria-label="4 of 4">
+              <div class="vol-info">
+                <span class="slide-kicker"><i class="fas fa-trophy" aria-hidden="true"></i> Champion</span>
+                <h3>AIUB Intra University Robo Championship</h3>
+                <button type="button" class="btn btn-outline achievement-toggle" data-target="robo-1"><i class="fas fa-images" aria-hidden="true"></i><span>View all photos</span></button>
+              </div>
+              <div class="ach-media">
+                <div class="achievement-gallery cert-gallery" data-achievement="robo-1" data-images='["assets/achievements/robo-1.jpg","assets/achievements/robo-2.jpg","assets/achievements/robo-3.jpg","assets/achievements/robo-4.jpg"]' data-title="AIUB Intra University Robo Championship">
+                  <button type="button" class="achievement-photo cert-frame" data-index="1" aria-label="View photo larger"><img src="assets/achievements/robo-2.jpg" alt="AIUB Robo Championship trophy and robot" loading="lazy" /></button>
+                </div>
+                <p class="slide-caption">Trophy and robot</p>
+              </div>
+            </article>
+            </div>
+          <div class="slider-controls">
+            <button type="button" class="slider-btn slider-prev" aria-label="Previous slide"><i class="fas fa-chevron-left" aria-hidden="true"></i></button>
+            <div class="slider-dots"></div>
+            <span class="slider-count" aria-hidden="true"></span>
+            <button type="button" class="slider-btn slider-next" aria-label="Next slide"><i class="fas fa-chevron-right" aria-hidden="true"></i></button>
+          </div>
+          <div class="slider-progress" aria-hidden="true"></div>
+          </div>
+        </div>
+
+        <div role="tabpanel" id="panel-robotics" aria-labelledby="tab-robotics" class="tab-panel" hidden>
+          <div class="slider" data-interval="2500" role="group" aria-roledescription="carousel" aria-label="Robotics competitions">
+            <div class="slider-track">
+            <article class="slide robo-slide" role="group" aria-roledescription="slide" aria-label="1 of 6">
+              <div class="achievement-gallery cert-gallery" data-images='["assets/activities/innoverse-bangladesh-2025.webp"]' data-title="Innoverse Bangladesh 2025">
+                <button type="button" class="achievement-photo cert-frame" data-index="0" aria-label="View Innoverse Bangladesh 2025 certificate larger">
+                  <img src="assets/activities/innoverse-bangladesh-2025.webp" alt="Certificate of Appreciation for Robo Soccer at Innoverse Bangladesh 2025" loading="lazy" />
+                </button>
+              </div>
+              <div class="slide-info">
+                <span class="slide-kicker">01 / 06</span>
+                <h3>Innoverse Bangladesh 2025</h3>
+                <p class="slide-sub">National Science and Technology Carnival</p>
+                <dl class="meta">
+                  <div><dt>Segment</dt><dd>Robo Soccer</dd></div>
+                  <div><dt>Role</dt><dd>Participant</dd></div>
+                  <div><dt>Date</dt><dd>14–15 Nov 2025</dd></div>
+                  <div><dt>Organizer</dt><dd>WhiteBoard Initiatives</dd></div>
+                  <div><dt>Venue</dt><dd>BUET, Dhaka</dd></div>
+                </dl>
+              </div>
+            </article>
+            <article class="slide robo-slide" role="group" aria-roledescription="slide" aria-label="2 of 6">
+              <div class="achievement-gallery cert-gallery" data-images='["assets/activities/aust-mindsparks-24.webp"]' data-title="MindSparks ’24">
+                <button type="button" class="achievement-photo cert-frame" data-index="0" aria-label="View MindSparks ’24 certificate larger">
+                  <img src="assets/activities/aust-mindsparks-24.webp" alt="Certificate of Participation for Robo Soccer at MindSparks ’24" loading="lazy" />
+                </button>
+              </div>
+              <div class="slide-info">
+                <span class="slide-kicker">02 / 06</span>
+                <h3>MindSparks ’24</h3>
+                <p class="slide-sub">Presented by One Bank PLC</p>
+                <dl class="meta">
+                  <div><dt>Segment</dt><dd>Robo Soccer</dd></div>
+                  <div><dt>Role</dt><dd>Participant</dd></div>
+                  <div><dt>Date</dt><dd>14 Dec 2024</dd></div>
+                  <div><dt>Organizer</dt><dd>AUST Innovation and Design Club</dd></div>
+                  
+                </dl>
+              </div>
+            </article>
+            <article class="slide robo-slide" role="group" aria-roledescription="slide" aria-label="3 of 6">
+              <div class="achievement-gallery cert-gallery" data-images='["assets/activities/jusc-science-festival-2024.webp"]' data-title="6th JUSC National Science Festival 2024">
+                <button type="button" class="achievement-photo cert-frame" data-index="0" aria-label="View 6th JUSC National Science Festival 2024 certificate larger">
+                  <img src="assets/activities/jusc-science-festival-2024.webp" alt="Certificate of Participation for Robo Soccer at 6th JUSC National Science Festival 2024" loading="lazy" />
+                </button>
+              </div>
+              <div class="slide-info">
+                <span class="slide-kicker">03 / 06</span>
+                <h3>6th JUSC National Science Festival 2024</h3>
+                <p class="slide-sub">University category</p>
+                <dl class="meta">
+                  <div><dt>Segment</dt><dd>Robo Soccer</dd></div>
+                  <div><dt>Role</dt><dd>Participant</dd></div>
+                  <div><dt>Date</dt><dd>21 Sep 2024</dd></div>
+                  <div><dt>Organizer</dt><dd>Jahangirnagar University Science Club</dd></div>
+                  
+                </dl>
+              </div>
+            </article>
+            <article class="slide robo-slide" role="group" aria-roledescription="slide" aria-label="4 of 6">
+              <div class="achievement-gallery cert-gallery" data-images='["assets/activities/ewu-national-robofest-2024.webp"]' data-title="EWU National RoboFest 2024">
+                <button type="button" class="achievement-photo cert-frame" data-index="0" aria-label="View EWU National RoboFest 2024 certificate larger">
+                  <img src="assets/activities/ewu-national-robofest-2024.webp" alt="Certificate of Participation for Robo Soccer at EWU National RoboFest 2024" loading="lazy" />
+                </button>
+              </div>
+              <div class="slide-info">
+                <span class="slide-kicker">04 / 06</span>
+                <h3>EWU National RoboFest 2024</h3>
+                <p class="slide-sub">Presented by Prime Bank</p>
+                <dl class="meta">
+                  <div><dt>Segment</dt><dd>Robo Soccer</dd></div>
+                  <div><dt>Role</dt><dd>Participant</dd></div>
+                  <div><dt>Date</dt><dd>7–9 Nov 2024</dd></div>
+                  <div><dt>Organizer</dt><dd>East West University Robotics Club</dd></div>
+                  <div><dt>Venue</dt><dd>EWU campus, Dhaka</dd></div>
+                </dl>
+              </div>
+            </article>
+            <article class="slide robo-slide" role="group" aria-roledescription="slide" aria-label="5 of 6">
+              <div class="achievement-gallery cert-gallery" data-images='["assets/activities/ismail-al-jazari-robotics-fest-2025.webp"]' data-title="Ismail Al-Jazari Robotics Fest 2025">
+                <button type="button" class="achievement-photo cert-frame" data-index="0" aria-label="View Ismail Al-Jazari Robotics Fest 2025 certificate larger">
+                  <img src="assets/activities/ismail-al-jazari-robotics-fest-2025.webp" alt="Certificate of Participation for Robo Soccer at Ismail Al-Jazari Robotics Fest 2025" loading="lazy" />
+                </button>
+              </div>
+              <div class="slide-info">
+                <span class="slide-kicker">05 / 06</span>
+                <h3>Ismail Al-Jazari Robotics Fest 2025</h3>
+                <p class="slide-sub">Inventor & Roboticist</p>
+                <dl class="meta">
+                  <div><dt>Segment</dt><dd>Robo Soccer</dd></div>
+                  <div><dt>Role</dt><dd>Participant</dd></div>
+                  <div><dt>Date</dt><dd>13 Nov 2025</dd></div>
+                  <div><dt>Organizer</dt><dd>Bangladesh Islami Chhatrashibir, Private University West</dd></div>
+                  
+                </dl>
+              </div>
+            </article>
+            <article class="slide robo-slide" role="group" aria-roledescription="slide" aria-label="6 of 6">
+              <div class="achievement-gallery cert-gallery" data-images='["assets/activities/ist-ece-day-2025.webp"]' data-title="6th ECE Day 2025">
+                <button type="button" class="achievement-photo cert-frame" data-index="0" aria-label="View 6th ECE Day 2025 certificate larger">
+                  <img src="assets/activities/ist-ece-day-2025.webp" alt="Certificate of Participation for Robo Soccer at 6th ECE Day 2025" loading="lazy" />
+                </button>
+              </div>
+              <div class="slide-info">
+                <span class="slide-kicker">06 / 06</span>
+                <h3>6th ECE Day 2025</h3>
+                <p class="slide-sub">Institute of Science & Technology</p>
+                <dl class="meta">
+                  <div><dt>Segment</dt><dd>Robo Soccer</dd></div>
+                  <div><dt>Role</dt><dd>Participant</dd></div>
+                  <div><dt>Date</dt><dd>Oct 2025</dd></div>
+                  <div><dt>Organizer</dt><dd>Electronics Communication & Robotics Club (ECRCIST)</dd></div>
+                  
+                </dl>
+              </div>
+            </article>
+            </div>
+          <div class="slider-controls">
+            <button type="button" class="slider-btn slider-prev" aria-label="Previous slide"><i class="fas fa-chevron-left" aria-hidden="true"></i></button>
+            <div class="slider-dots"></div>
+            <span class="slider-count" aria-hidden="true"></span>
+            <button type="button" class="slider-btn slider-next" aria-label="Next slide"><i class="fas fa-chevron-right" aria-hidden="true"></i></button>
+          </div>
+          <div class="slider-progress" aria-hidden="true"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Let's work together</span>
+          <h2 class="section-title">Get In Touch</h2>
+        </div>
+        <div class="contact-wrapper">
+          <div class="contact-info">
+            <h3>Let's Connect</h3>
+            <p>
+              Have a question, opportunity, or idea to discuss? Feel free to reach out. I’d be happy to connect!
+            </p>
+            <a
+              href="assets/Resume%20of%20Md%20Abu%20Bakar%20Siddique.pdf"
+              class="btn btn-primary contact-cv-btn"
+              id="downloadCVBtn"
+              download="Resume of Md Abu Bakar Siddique.pdf"
+            >
+              <i class="fa-solid fa-download"></i>
+              Download CV
+            </a>
+            <div class="contact-list">
+              <div class="contact-card">
+                <div class="contact-icon-wrap">
+                  <i class="fas fa-envelope"></i>
+                </div>
+                <div>
+                  <h4>Email</h4>
+                  <p><a href="mailto:siddique0203@gmail.com">siddique0203@gmail.com</a></p>
+                </div>
+              </div>
+              <div class="contact-card">
+                <div class="contact-icon-wrap">
+                  <i class="fas fa-phone"></i>
+                </div>
+                <div>
+                  <h4>Phone</h4>
+                  <p>+880 1679 311484</p>
+                  <p>+880 1756 736045</p>
+                </div>
+              </div>
+              <div class="contact-card">
+                <div class="contact-icon-wrap">
+                  <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <div>
+                  <h4>Location</h4>
+                  <p>Kuril, Dhaka, Bangladesh</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="contact-form-container">
+            <form id="contactForm" action="send_email_smtp.php" method="POST">
+              <div class="form-row">
+                <div class="form-group">
+                  <input type="text" name="name" placeholder="Your Name" maxlength="100" autocomplete="name" required />
+                </div>
+                <div class="form-group">
+                  <input type="email" name="email" placeholder="Your Email" maxlength="254" autocomplete="email" required />
+                </div>
+              </div>
+              <div class="form-group">
+                <input type="text" name="subject" placeholder="Subject" maxlength="150" required />
+              </div>
+              <div class="form-group">
+                <textarea name="message" rows="5" placeholder="Your Message" maxlength="5000" required></textarea>
+              </div>
+              <div class="hp" aria-hidden="true"><label>Leave this empty<input type="text" name="website" tabindex="-1" autocomplete="off" /></label></div>
+              <button type="submit" class="btn btn-primary btn-full">
+                <span>Send Message</span>
+                <i class="fas fa-paper-plane"></i>
+              </button>
+              <div id="formMessage" class="form-message" role="status" aria-live="polite"></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="f-brand">
+            <a href="#home" class="f-mark" aria-label="Back to top"><img src="assets/abs.png" alt="ABS logo" /></a>
+            <h3>Md Abu Bakar Siddique</h3>
+            <p>Software Engineer, QA<br />Dhaka, Bangladesh</p>
+          </div>
+
+          <nav aria-labelledby="f-elsewhere">
+            <h4 class="f-label" id="f-elsewhere">Elsewhere</h4>
+            <ul class="f-links">
+              <li><a href="https://linkedin.com/in/siddique0203" target="_blank" rel="noopener">LinkedIn <span aria-hidden="true">↗</span></a></li>
+              <li><a href="https://github.com/siddique0203" target="_blank" rel="noopener">GitHub <small>siddique0203</small></a></li>
+              <li><a href="https://www.facebook.com/mdabubakar.siddique.1614" target="_blank" rel="noopener">Facebook <span aria-hidden="true">↗</span></a></li>
+              <li><a href="https://wa.me/8801756736045" target="_blank" rel="noopener">WhatsApp <span aria-hidden="true">↗</span></a></li>
+              <li><a href="mailto:siddique0203@gmail.com">Email</a></li>
+              <li><a href="assets/Resume%20of%20Md%20Abu%20Bakar%20Siddique.pdf" target="_blank" rel="noopener">CV <small>PDF</small></a></li>
+            </ul>
+          </nav>
+
+          <div>
+            <h4 class="f-label">Now</h4>
+            <p class="f-now-tag">Since July 2026</p>
+            <p class="f-now">Support &amp; QA Intern at EWN Bangladesh Ltd</p>
+            <a href="#experience" class="f-more">View experience →</a>
+          </div>
+
+          <div>
+            <h4 class="f-label" id="f-theme">Theme</h4>
+            <ul class="f-links f-theme" aria-labelledby="f-theme">
+              <li><button type="button" data-theme-option="light">Light</button></li>
+              <li><button type="button" data-theme-option="dark">Dark</button></li>
+              <li><button type="button" data-theme-option="system">System</button></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>&copy; 2026 MD ABU BAKAR SIDDIQUE. All rights reserved.</p>
+          <a href="#home" class="f-top">Back to top ↑</a>
+        </div>
+      </div>
+    </footer>
+
+    <div class="bug-swarm" aria-hidden="true"></div>
+
+    <!-- Achievement Photo Lightbox -->
+    <div class="lightbox" id="achievementLightbox" aria-hidden="true">
+      <button type="button" class="lightbox-close" id="lightboxClose" aria-label="Close">
+        <i class="fas fa-times"></i>
+      </button>
+      <button type="button" class="lightbox-arrow lightbox-prev" id="lightboxPrev" aria-label="Previous photo">
+        <i class="fas fa-chevron-left"></i>
+      </button>
+      <div class="lightbox-stage">
+        <img src="" alt="" id="lightboxImage" />
+      </div>
+      <button type="button" class="lightbox-arrow lightbox-next" id="lightboxNext" aria-label="Next photo">
+        <i class="fas fa-chevron-right"></i>
+      </button>
+      <div class="lightbox-caption">
+        <span id="lightboxTitle"></span>
+        <span class="lightbox-counter" id="lightboxCounter"></span>
+      </div>
+    </div>
+
+    <script src="script.js?v=20261110" defer></script>
+  </body>
+</html>
